@@ -4,11 +4,13 @@ class AuthorsController < ApplicationController
   def index
     authors = Author.all 
     render json: authors
+    #.to_json(include:[:profile, :posts])
   end
 
   def show
     author = Author.find(params[:id])
     render json: author
+    #.to_json(include:[:profile, :posts])
   end
 
   private
